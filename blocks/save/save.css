@@ -1,0 +1,13 @@
+.save-btn {
+  padding: 12px 26px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  background-color: #e60023; /* Pinterest red */
+  color: white;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  opacity: 0.9;
+}
