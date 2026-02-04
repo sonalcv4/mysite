@@ -1,59 +1,38 @@
-/* Cat Block Styles */
+/* Grid layout */
+.cat > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 
-.cat-wrapper {
-    width: 100%;
-    padding: 0;
-    margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
-.cat.block {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+/* Card styling */
+.cat > ul > li {
+  border-radius: 14px;
+  overflow: hidden;
+  background: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.cat-grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    gap: 0; /* Removing gap to ensure "full width" flush look, or adjust as preferred */
+/* Hover effect */
+.cat > ul > li:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.cat-image-wrapper {
-    flex: 0 0 25%; /* Exactly 4 images per row */
-    box-sizing: border-box;
-    overflow: hidden;
-    aspect-ratio: 1 / 1; /* Makes them square, common for galleries */
+/* Image container */
+.cat .cat-card-image {
+  line-height: 0;
 }
 
-.cat-image-wrapper picture,
-.cat-image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease, filter 0.5s ease;
-}
-
-/* Hover Effect */
-.cat-image-wrapper:hover img {
-    transform: scale(1.1); /* Zoom effect */
-    filter: brightness(0.8); /* Subtle darkening */
-    cursor: pointer;
-}
-
-/* Responsive adjustment for mobile */
-@media (max-width: 900px) {
-    .cat-image-wrapper {
-        flex: 0 0 50%; /* 2 images per row on tablets */
-    }
-}
-
-@media (max-width: 600px) {
-    .cat-image-wrapper {
-        flex: 0 0 100%; /* 1 image per row on mobile */
-    }
+/* Image sizing */
+.cat > ul > li img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
 }
